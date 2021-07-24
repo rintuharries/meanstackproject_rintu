@@ -1,0 +1,27 @@
+#sidebar{
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    height: 100%;
+    padding-top: 90px;
+    width: 300px;
+    position: fixed;
+    margin-top: 0px;
+    margin-left: 0%;
+   }
+   #menu {
+       margin-top: 5px;
+         padding-top: 10px;
+   }
+   pi{
+       border-radius: 10px;
+   }
+   #dashboard{
+    margin-top: 70px;
+    color:black;
+    margin-left: 700px;
+    margin-right: 100px;
+    width:50%;
+}

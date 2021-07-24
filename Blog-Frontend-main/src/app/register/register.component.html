@@ -1,0 +1,75 @@
+<section class="vh-200 bg-image" style="background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX27463463.jpg');">
+    <br><div class=" align-items-center h-100 ">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+  
+                <form [formGroup]="register" (ngSubmit)="signupuser()">
+  
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1cg" >First Name</label>
+                    <input type="text" id="form3Example1" class="form-control form-control-lg"name="firstname" formControlName="firstname" />
+                    <small style="color: red; font-weight: bolder;" *ngIf="register.get('firstname')?.touched && register.get('firstname')?.hasError('required')">** Please Enter First Name</small>
+    <small style="color: grey; font-weight: bolder;" *ngIf="register.get('firstname')?.touched && register.get('firstname')?.hasError('pattern')">** Only alphabets are allowed</small>
+                   
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1cg">Last Name</label>
+                    <input type="text" id="form3Example2" class="form-control form-control-lg"name="lastname" formControlName="lastname" />     
+                    <small style="color: red; font-weight: bolder;" *ngIf="register.get('lastname')?.touched && register.get('lastname')?.hasError('required')">** Please Enter Last Name</small>
+    <small style="color: grey; font-weight: bolder;" *ngIf="register.get('lastname')?.touched && register.get('lastname')?.hasError('pattern')">** Only alphabets are allowed</small>            
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3cg">Email</label>
+                    <input type="email" id="form3Example3" class="form-control form-control-lg"name="email" formControlName="email" />
+                    <small style="color: red; font-weight: bolder;" *ngIf="register.get('email')?.touched && register.get('email')?.hasError('required')">** Please Enter Email</small>
+    <small style="color: grey; font-weight: bolder;" *ngIf="register.get('email')?.touched && register.get('email')?.hasError('pattern')">** Invalid Email (eg: abc@gmail.com)</small>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3cg">Phone</label>
+                    <input type="number" id="form3Example4" class="form-control form-control-lg"name="phone" formControlName="phone" />
+                    <small style="color: red; font-weight: bolder;" *ngIf="register.get('phone')?.touched && register.get('phone')?.hasError('required')">** Please Enter Phone Number</small>
+    <small style="color: grey; font-weight: bolder;" *ngIf="register.get('phone')?.touched && register.get('phone')?.hasError('pattern')">** Invalid Phone Number</small>
+                  </div> 
+                 
+  
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form3Example4cg">Password</label>
+                      <input type="password" id="form3Example5" class="form-control form-control-lg"name="password" formControlName="password" />                    
+                    </div>  
+                    <small style="color: red; font-weight: bolder;" *ngIf="register.get('password')?.touched && register.get('password')?.hasError('required')">** Please Enter Password</small>
+                    <small style="color: grey; font-weight: bolder;" *ngIf="register.get('password')?.touched && register.get('password')?.hasError('pattern')">**Password should contain minimum 8 characters with at least one uppercase, lowercase, special characters & digits.</small>
+                    <div class="row">
+                      
+                        <div class="form-outline mb-4">
+                        <label class="form-label select-label">User Type</label><br>
+                        <select class="form-select" name="usertype" formControlName="usertype" >                          
+                          <option value="Trainer">Trainer</option>
+                          <option value="Student">Student</option>                          
+                        </select>
+                        <small style="color: red; font-weight: bolder;" *ngIf="register.get('usertype')?.touched && register.get('usertype')?.hasError('required')">** Please Choose User Type</small>
+                      </div>                   
+                      
+                    </div>          
+       
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-block"[disabled]="register.invalid">Register</button>
+                  </div>
+  
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/login" class="fw-bold text-body">Login here</a></p>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
